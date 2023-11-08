@@ -6,8 +6,7 @@
 
 body {
   background-image: url(assets/gradient_2.jpg);
-  /* background-repeat: no-repeat; */
-  /* background-size: auto; */
+  background-size: cover;
 }
 
 .top {
@@ -91,13 +90,18 @@ body {
 }
 
 .mealimage{
-    width: 40vw;
-    height: 80vh;
+    width: 30vw;
+    height: 60vh;
     border-top-right-radius: 3rem;
     border-bottom-right-radius: 3rem;
     border-bottom-left-radius: 3rem;
     border-top-left-radius: 3rem;
-}
+    transition: transform 0.2s;
+  }
+
+  .mealimage:hover{
+    transform: scale(1.05);
+  }
 
 #searchedFoodContainer{
   padding: 2vw;
@@ -110,7 +114,7 @@ body {
 }
 
 .fetallimg{
-  background-color: #ffffff;
+  background-color: rgb(89, 158, 236);
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -127,18 +131,15 @@ body {
 .fetallimg img{
   
   width: 50%;
-  max-height: 200px; /* Adjust the maximum height as needed */
+  max-height: 200px;
   object-fit: cover;
-    /* width: 15vw; */
-    /* height: 25vh; */
 }
 
 .fetallimg h3{
-  font-size: 18px;
+  font-size: 25px;
   margin-top: 10px;
   font-weight: bold;
-    /* font-size: larger; */
-    /* font-weight: 700; */
+  color: #fff;
 }
 
 
