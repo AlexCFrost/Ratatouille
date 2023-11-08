@@ -1,8 +1,28 @@
 
 const RandomMealContainer = document.getElementById("RandomMealContainer")
 const randomMeal = document.getElementById("randomMeal")
+const randomMealName = document.createElement("p");
 const searchedFoodContainer = document.getElementById("searchedFoodContainer")   
 
+// for random generated mealImage
+fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+.then((res) => {
+  return res.json();
+})
+.then((data) => {
+  console.log(data.meals[0].strMealThumb);
+  randomMeal.src = data.meals[0].strMealThumb
+
+  randomMealName.textContent = data.meals[0].strMeal;
+  RandomMealContainer.appendChild(randomMealName);
+  
+})
+.catch(Error=>{
+  console.log(Error)
+})
+
+
+// for searched meal generator
 document.getElementById("searchid").addEventListener("click", ()=>{
     const searchResult = document.getElementById("search").value
     searchedFoodContainer.innerHTML='';
@@ -21,6 +41,7 @@ document.getElementById("searchid").addEventListener("click", ()=>{
 })
 
 
+// acreating and appending the tags
 function appendMeals(food){
     food.forEach((el) => {
         const div = document.createElement("div")
@@ -39,18 +60,7 @@ function appendMeals(food){
 }
 
 
-    fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-  .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
-    console.log(data.meals[0].strMealThumb);
-    randomMeal.src = data.meals[0].strMealThumb
-    
-  })
-  .catch(Error=>{
-    console.log(Error)
-  })
+
 
 
 

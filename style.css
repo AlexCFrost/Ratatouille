@@ -6,6 +6,8 @@
 
 body {
   background-image: url(assets/gradient_2.jpg);
+  /* background-repeat: no-repeat; */
+  /* background-size: auto; */
 }
 
 .top {
@@ -97,29 +99,46 @@ body {
     border-top-left-radius: 3rem;
 }
 
-.searchedFoodContainer{
-    display: inline-grid;
-    width: 100vw;
+#searchedFoodContainer{
+  padding: 2vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  justify-content: center;
+  align-content: center;
 
 }
 
 .fetallimg{
-    flex: 0 0 calc(25%-20px);
-    width: 15vw;
-    margin: 10px;
-    text-align: center;
-    overflow: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.2s;
+  width: 20vw;
+
+}
+.fetallimg:hover {
+  transform: scale(1.05);
 }
 
-.fetallimg img{
 
-    width: 15vw;
-    height: 25vh;
+.fetallimg img{
+  
+  width: 50%;
+  max-height: 200px; /* Adjust the maximum height as needed */
+  object-fit: cover;
+    /* width: 15vw; */
+    /* height: 25vh; */
 }
 
 .fetallimg h3{
-    font-size: larger;
-    font-weight: 700;
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+    /* font-size: larger; */
+    /* font-weight: 700; */
 }
 
 
